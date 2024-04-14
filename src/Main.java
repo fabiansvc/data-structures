@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        exampleStack();
-        exampleQueues();
-        exampleList();
-        exampleDequeue();
-        exampleTable();
+        //exampleStack();
+        //exampleQueues();
+        //exampleList();
+        //exampleDequeue();
+        //exampleTable();
         exampleArrayList();
     }
 
@@ -40,13 +40,23 @@ public class Main {
     }
 
     private static void exampleQueues(){
+
+        int size = 10;
+        System.out.println(size++);
+        System.out.println(size);
         Queue<Integer> queue = new Queue<>();
 
         // Add elements to the queue
         queue.enqueue(1);
         queue.enqueue(2);
         queue.enqueue(3);
-
+        queue.enqueue(4);
+        queue.enqueue(5);
+        queue.enqueue(6);
+        queue.enqueue(7);
+        queue.enqueue(8);
+        queue.enqueue(9);
+        queue.enqueue(10);
         // Display the size of the queue
         System.out.println("Queue size: " + queue.size());
 
@@ -79,6 +89,7 @@ public class Main {
         list.addFirst(1);
         list.addLast(2);
         list.addLast(3);
+        list.addFirst(4);
 
         // Display the initial content of the list
         System.out.println("Initial List:");
@@ -178,6 +189,7 @@ public class Main {
         // Add elements to the end of the ArrayList
         numbers.add(10);
         numbers.add(20);
+        numbers.add(20);
         numbers.add(30);
 
         // Insert an element at a specific position
@@ -195,6 +207,10 @@ public class Main {
 
         // Remove the first occurrence of the element 20
         numbers.remove(Integer.valueOf(20));
+
+        for(int elem : numbers){
+            System.out.println(elem);
+        }
 
         // Check if the ArrayList is empty
         boolean isEmpty = numbers.isEmpty();

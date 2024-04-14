@@ -1,5 +1,7 @@
 package model.queues;
 
+import java.sql.SQLOutput;
+
 public class Queue<T> implements IQueue<T> {
     private static final int INITIAL_CAPACITY = 10;
     private Object[] elements;
@@ -16,19 +18,7 @@ public class Queue<T> implements IQueue<T> {
 
     @Override
     public void enqueue(final T elem) {
-        if (size == elements.length) {
-            int newCapacity = elements.length * 2;
-            Object[] newQueue = new Object[newCapacity];
-            for (int i = 0; i < size; i++) {
-                newQueue[i] = elements[(front + i) % elements.length];
-            }
-            elements = newQueue;
-            front = 0;
-            rear = size - 1;
-        }
-        rear = (rear + 1) % elements.length;
-        elements[rear] = elem;
-        size++;
+        elements[size++] = elem;
     }
 
     @Override
